@@ -2,14 +2,12 @@
     width: 50px;
     height: 50px;
     cursor: pointer;
-    position: absolute;
-    bottom: 150px;
-    left: 30px;
+
 }
 #gameover{
     position: absolute;
-    width: 670px;
-    height: 870px;
+    width: 650px;
+    height: 750px;
     top: 0;
     background-color:black;
     display: none;
@@ -30,19 +28,18 @@
     display: none;
 }
 #restart{
-    position: relative;
     cursor: pointer;
     font-size: 1.25em;
-  
-    left: 155px;
     color: #fff;
+    text-align: center;
 }
 #start{
     position: absolute;
     background-color: black;
     top: 0px;
     width:650px;
-    height: 800px;
+    height: 750px;
+    border-radius: 10px;
 }
 #start_p{
     position: relative;

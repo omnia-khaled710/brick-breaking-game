@@ -7,26 +7,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Breaks Game</title>
    <link rel="stylesheet" href="style.css">
+
+   <style>
+    body {
+        background-color: black;
+    }
+    .container {
+        width: 650px;
+        margin: 5rem auto;
+        position: relative;
+        box-shadow: rgb(81, 69, 136) 0 0 20px 5px;
+        border-radius: 10px;
+    }
+    .sound{
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+    }
+   </style>
 </head>
 
 <body>
+    
+    <div class="container">
+        <canvas id="break" width="650" height="750" style="border-radius: 10px;"></canvas>
+        <div id="start">
+         <p id="start_p">start..</p>
+        </div>
+        <div class="sound">
+            <img src="./imgs/SOUND_ON.png" id="sound">
+        </div>
+       <div id="gameover">
+            <img src="./imgs/youwon.png" alt="" id="youwon">
+            <img src="./imgs/gameover.png" alt="" id="youlose">
+            <div id="restart">
+                PlayAgain!
+            </div>
+        </div>
+   </div>
 
 
-    <canvas id="break" width="650" height="750" style="border:1px solid green ;"></canvas>
-     <div id="start">
-      <p id="start_p">start..</p>
-</div>
-<div class="sound">
-    <img src="./imgs/SOUND_ON.png" id="sound">
-    </div>
-</div>
-    <div id="gameover">
-    <img src="./imgs/youwon.png" alt="" id="youwon">
-    <img src="./imgs/gameover.png" alt="" id="youlose">
-<div id="restart">
-    PlayAgain!
-</div>
-</div>
+    
+
+
     <script src="js/bricks.js"></script>
     <script src="js/game.js"></script>
     <script src="js/components.js"></script>
