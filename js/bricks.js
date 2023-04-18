@@ -2,11 +2,11 @@
 
 
     const brick = {
-        row: 3,
-        column: 8,
+        row: 4,
+        column: 10,
         width: 35,
         height: 15,
-        offsetleft: 40,
+        offsetleft: 20,
         offsettop: 30,
         margintop: 30,
         fillcolor: '#32105D',

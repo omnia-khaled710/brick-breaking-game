@@ -134,14 +134,28 @@ function movePaddle() {
         paddle.x -= paddle.dx;
     }
 }
+//--------------------------------------- control with Mouse----------------------------------------------------
+document.addEventListener('mousemove',function(e){
+    // mouse position //
+    let relativeX = e.clientX - myCanvas.offsetLeft ;  
+    // if mouse inside canvas
+    if( 
+        relativeX > paddle.width / 2 &&
+        relativeX + paddle.width / 2 < myCanvas.width
+    ){
+        paddle.x = relativeX -paddle.width /2 ;
+    }
+   
+}) ;
+//--------------------------------------------end--------------------------------------------
 //---------------------------------------Declaration Ball-----------------------------------------------
 const ball ={
     x:myCanvas.width / 2 ,
     y:paddle.y-BALL_RADIUS,
     radius:BALL_RADIUS,
-    speed:3,
-    dx: 3 * (Math.random()* 2-1),
-    dy:-3,
+    speed:4,
+    dx: 4 * (Math.random()* 2-1),
+    dy:-4,
    } 
 //----------------------------------------------End-----------------------------------------------------
 //-------------------------------------------Draw Ball-----------------------------------------------
@@ -189,8 +203,8 @@ if(ball.y + ball.radius > myCanvas.height ){
 function resetBall(){
     ball.x= myCanvas.width/2;
     ball.y= paddle.y - BALL_RADIUS;
-    ball.dx= 3 * (Math.random()* 2-1);
-    ball.dy=-3;
+    ball.dx=  ball.speed* (Math.random()* 2-1);
+    ball.dy=-ball.speed;
 }
 //----------------------------------------------End-----------------------------------------------------
 
@@ -298,20 +312,17 @@ start.style.display='block';
 }
 //-------------------------------------------------------------------------------------
 function loops() {
-    // ctx.clearRect(0, 0, myCanvas.width, myCanvas.height);
     ctx.drawImage(main_img, 0, 0, 650, 850);
     draw();
     drawPaddle();
      movePaddle();
     drawBall();
-    draw();
      moveBall();
     ballWallCollision();
     ballPaddleCollision();
     ballBrickCollision();
     levelUp();
     gameOver();
-    // console.log("loopj")
     if(!GAME_OVER){
         requestAnimationFrame(loops);
     }
