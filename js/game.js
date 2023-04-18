@@ -150,7 +150,8 @@ function movePaddle() {
 // }) ;
 
 document.addEventListener('mousemove', function (e) {
-    let relativeX = e.clientX - myCanvas.offsetLeft; // mouse postion
+    let relativeX = e.clientX - myCanvas.offsetLeft;
+    console.log(myCanvas.offsetLeft) // mouse postion
     if (
       relativeX > PADDLE_WIDTH / 2 &&
       relativeX + PADDLE_WIDTH / 2 < myCanvas.width
