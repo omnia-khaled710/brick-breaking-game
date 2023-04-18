@@ -135,18 +135,29 @@ function movePaddle() {
     }
 }
 //--------------------------------------- control with Mouse----------------------------------------------------
-document.addEventListener('mousemove',function(e){
-    // mouse position //
-    let relativeX = e.clientX - myCanvas.offsetLeft ;  
-    // if mouse inside canvas
-    if( 
-        relativeX > paddle.width / 2 &&
-        relativeX + paddle.width / 2 < myCanvas.width
-    ){
-        paddle.x = relativeX -paddle.width /2 ;
-    }
+  // control with Mouse
+//   document.addEventListener('mousemove',function(e){
+//     // mouse position //
+//     let relativeX = e.clientX - myCanvas.offsetLeft ;  
+//     // if mouse inside canvas
+//     if( 
+//         relativeX > paddle.width / 2 &&
+//         relativeX + paddle.width / 2 < myCanvas.width
+//     ){
+//         paddle.x = relativeX -paddle.width /2 ;
+//     }
    
-}) ;
+// }) ;
+
+document.addEventListener('mousemove', function (e) {
+    let relativeX = e.clientX - myCanvas.offsetLeft; // mouse postion
+    if (
+      relativeX > PADDLE_WIDTH / 2 &&
+      relativeX + PADDLE_WIDTH / 2 < myCanvas.width
+    ) {
+      paddle.x = relativeX - PADDLE_WIDTH / 2;
+    }
+  });
 //--------------------------------------------end--------------------------------------------
 //---------------------------------------Declaration Ball-----------------------------------------------
 const ball ={
